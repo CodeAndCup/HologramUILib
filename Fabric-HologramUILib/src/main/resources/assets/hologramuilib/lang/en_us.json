@@ -1,0 +1,8 @@
+{
+  "category.hologramuilib": "HologramUILib",
+  "key.hologramuilib.debug": "Toggle Hologram Debug",
+  "commands.hologram.spawn": "Spawn a test hologram menu",
+  "commands.hologram.clear": "Clear all hologram menus",
+  "commands.hologram.debug": "Toggle debug hitboxes"
+}
+

@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "hologramuilib",
+  "version": "${version}",
+  "name": "HologramUILib",
+  "description": "",
+  "authors": [],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "icon": "assets/hologramuilib/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "fabric-datagen": [
+      "fr.perrier.hologramuilib.client.MainDataGenerator"
+    ],
+    "client": [
+      "fr.perrier.hologramuilib.client.MainClient"
+    ],
+    "main": [
+      "fr.perrier.hologramuilib.Main"
+    ]
+  },
+  "mixins": [
+    "hologramuilib.mixins.json",
+    {
+      "config": "hologramuilib.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric-api": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}

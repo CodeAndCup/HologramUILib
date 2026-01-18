@@ -1,0 +1,52 @@
+# HologramUILib Spigot API Configuration
+
+# Network settings
+network:
+  # Plugin messaging channel for mod communication
+  channel: "hologramuilib:main"
+
+  # Timeout for network operations (ms)
+  timeout_ms: 5000
+
+  # Retry attempts for failed sends
+  retry_attempts: 3
+
+# Default menu settings
+menu_defaults:
+  # Menu width in pixels
+  width: 220
+
+  # Menu height (auto = -1)
+  height: -1
+
+  # Menu scale factor
+  scale: 0.02
+
+  # Maximum render distance in blocks
+  max_distance: 20
+
+  # Show background
+  background: true
+
+  # Background color (ARGB hex)
+  background_color: "#DD000000"
+
+  # Border color (ARGB hex)
+  border_color: "#FFFF00"
+
+  # Padding in pixels
+  padding: 10
+
+  # Spacing between elements
+  spacing: 5
+
+# Debug settings
+debug:
+  # Enable debug logging
+  enabled: false
+
+  # Log network packets
+  log_packets: false
+
+  # Log events
+  log_events: false

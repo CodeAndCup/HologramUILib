@@ -1,0 +1,8 @@
+{
+  "category.hologramuilib": "HologramUI",
+  "key.hologramuilib.debug": "Mode Debug",
+  "commands.hologram.spawn": "Faire apparaître un menu hologramme de test",
+  "commands.hologram.clear": "Supprimer tous les menus hologrammes",
+  "commands.hologram.debug": "Activer/désactiver les hitboxes de debug"
+}
+

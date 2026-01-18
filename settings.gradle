@@ -1,0 +1,21 @@
+pluginManagement {
+    repositories {
+        maven { url = 'https://maven.fabricmc.net/' }
+        maven { url = 'https://maven.architectury.dev/' }
+        mavenCentral()
+        gradlePluginPortal()
+    }
+    plugins {
+        id 'fabric-loom' version '1.9.2'
+    }
+}
+
+rootProject.name = 'HologramUILib-Workspace'
+
+// Include sub-projects
+include ':Fabric-HologramUILib'
+include ':Spigot-HologramUILib'
+
+// Project paths
+project(':Fabric-HologramUILib').projectDir = file('Fabric-HologramUILib')
+project(':Spigot-HologramUILib').projectDir = file('Spigot-HologramUILib')

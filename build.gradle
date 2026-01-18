@@ -1,0 +1,86 @@
+// Root build.gradle for HologramUILib multi-project
+// This file orchestrates the build of all sub-projects
+
+plugins {
+    id 'java'
+    id 'eclipse'
+    id 'idea'
+}
+
+group = 'fr.perrier'
+version = '1.0-SNAPSHOT'
+
+// Subprojects configuration
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'eclipse'
+    apply plugin: 'idea'
+
+    group = 'fr.perrier'
+    version = '1.0-SNAPSHOT'
+
+    repositories {
+        mavenCentral()
+        maven { url = 'https://maven.fabricmc.net/' }
+        maven { url = 'https://maven.architectury.dev/' }
+        maven { url = 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/' }
+    }
+
+    java {
+        sourceCompatibility = JavaVersion.VERSION_21
+        targetCompatibility = JavaVersion.VERSION_21
+    }
+
+    tasks.withType(JavaCompile) {
+        options.encoding = 'UTF-8'
+        options.release = 21
+    }
+}
+
+// Spigot sub-project configuration
+project(':Spigot-HologramUILib') {
+    dependencies {
+        compileOnly 'org.spigotmc:spigot-api:1.21.4-R0.1-SNAPSHOT'
+    }
+}
+
+// Build task aggregate
+task buildAll {
+    dependsOn subprojects*.build
+    description = 'Build all sub-projects'
+}
+
+// Clean task aggregate
+task cleanAll {
+    dependsOn subprojects*.clean
+    description = 'Clean all sub-projects'
+}
+
+// Print info
+task projectInfo {
+    doLast {
+        println "═════════════════════════════════════════════════════════════"
+        println "  HologramUILib Multi-Project Build System"
+        println "═════════════════════════════════════════════════════════════"
+        println ""
+        println "Available sub-projects:"
+        subprojects.each { Project proj ->
+            println "  • ${proj.path}"
+        }
+        println ""
+        println "Commands:"
+        println "  ./gradlew build          - Build all projects"
+        println "  ./gradlew buildAll       - Build all projects (alias)"
+        println "  ./gradlew clean          - Clean all projects"
+        println "  ./gradlew cleanAll       - Clean all projects (alias)"
+        println "  ./gradlew projectInfo    - Display this information"
+        println ""
+        println "Specific sub-project commands:"
+        println "  ./gradlew :HologramUILib:build"
+        println "  ./gradlew :Spigot-HologramUILib:build"
+        println "═════════════════════════════════════════════════════════════"
+    }
+}
+
+// Default task
+defaultTasks 'projectInfo'
