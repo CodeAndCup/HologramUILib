@@ -1,7 +1,0 @@
-{
-  "name": "Spigot-HologramUILib",
-  "description": "Spigot API for HologramUILib - Create interactive holographic menus in Minecraft",
-  "version": "1.0.0",
-  "java_version": "17",
-  "gradle_version": "8.5"
-}

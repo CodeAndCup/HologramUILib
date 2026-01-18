@@ -1,8 +1,6 @@
 package fr.perrier.hologramuilib;
 
 import fr.perrier.hologramuilib.api.HologramMenuAPI;
-import fr.perrier.hologramuilib.commands.HologramCommand;
-import fr.perrier.hologramuilib.examples.APIExamples;
 import fr.perrier.hologramuilib.network.NetworkManager;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
@@ -46,11 +44,6 @@ public class HologramUILibPlugin extends JavaPlugin implements Listener {
 
         LOGGER.info("✓ HologramUILib Spigot API enabled successfully");
         LOGGER.info("✓ Ready for menu creation and management");
-
-        // Load commands
-        Objects.requireNonNull(this.getCommand("hologramenu")).setExecutor(new HologramCommand());
-        LOGGER.info("✓ Commands registered: /hologramenu");
-
     }
 
     @Override
